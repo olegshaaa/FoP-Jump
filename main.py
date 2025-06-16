@@ -70,7 +70,7 @@ while True:
                                 platforms.append(new_platform)
                                 current_question = new_platform.question
                             else:
-                                game_completed = True
+                                game_win = True
                         else:
                             player.alive = False
 

@@ -44,9 +44,9 @@ def instruction(screen):
 
     while True:
         screen.fill(BACKGROUND_COLOR)
-        for i, line in enumerate(instructions):
+        for index, line in enumerate(instructions):
             text = font.render(line, True, text_color)
-            screen.blit(text, (50, 100 + i * 40))
+            screen.blit(text, (50, 100 + index * 40))
 
         pygame.draw.rect(screen, button_color, button_rect)
         button_text = small_font.render("Ок", True, text_color)
