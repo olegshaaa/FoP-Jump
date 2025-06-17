@@ -7,7 +7,7 @@ class Question:
 topics = {
     "МКТ":
         [Question("Распределение Максвелла описывает координату газа?", False),
-        Question("Постоянная Больцмана измеряется в джоулях?", True),
+        Question("Постоянная Больцмана измеряется в джоулях?", False),
         Question("Молекулы газа всегда находятся в покое?", False),
         Question("Длина пробега молекулы зависит от давления?", True),
         Question("Частота столкновений растёт при нагревании?", True),
@@ -42,4 +42,4 @@ topics = {
 
 
 def get_questions_by_topic(topic_name):
-    return topics.get(topic_name, [])
+    return topics.get(topic_name)

@@ -55,11 +55,7 @@ while True:
                     player_answer = act.key == pygame.K_z
                     current_platform = player.on_platform
 
-                    upper_platforms = []
-                    for question_platform in platforms:
-                        if question_platform.rect.top < current_platform.rect.top:
-                            upper_platforms.append(question_platform)
-
+                    upper_platforms = [p for p in platforms if p.rect.top < current_platform.rect.top]
                     if upper_platforms:
                         next_platform = min(upper_platforms, key=lambda p: current_platform.rect.top - p.rect.top)
                         if next_platform.question is not None and next_platform.question.answer == player_answer:

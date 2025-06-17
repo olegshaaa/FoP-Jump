@@ -3,7 +3,7 @@ from settings import *
 
 
 def main_menu(screen):
-    font = pygame.font.SysFont(None, 48)
+    font = pygame.font.SysFont(None, 44)
     button_color = (50, 150, 50)
     text_color = (255, 255, 255)
     button_rect = pygame.Rect(SCREEN_WIDTH // 2 - 100, SCREEN_HEIGHT // 2 - 25, 200, 50)
@@ -35,10 +35,11 @@ def instruction(screen):
     instructions = [
         "Правила игры:",
         "",
-        "- Отвечай на вопросы за отведенное время.",
-        "- Нажми 'Z' для ответа 'Да', 'X' — для 'Нет'.",
-        "- Если ответ верный, ты прыгаешь выше.",
-        "- Если неверный — игра окончена.",
+        " Отвечай на вопросы за отведенное время",
+        " Нажми 'Z' для ответа 'Да', 'X' — для 'Нет'",
+        " Если ответ верный, ты прыгаешь выше",
+        " Если неверный — игра окончена",
+        " Если будешь долго думать - упадешь и проиграешь"
     ]
 
 
@@ -73,7 +74,7 @@ def choose_topic(screen):
         rect = pygame.Rect(SCREEN_WIDTH // 2 - 150, 200 + i * 80, 300, 50)
         buttons.append((topic, rect))
 
-    camera_speed = 0.55
+    camera_speed = 0.60
 
     while True:
         screen.fill(BACKGROUND_COLOR)
@@ -86,7 +87,7 @@ def choose_topic(screen):
             text_rect = text.get_rect(center=rect.center)
             screen.blit(text, text_rect)
 
-        cam_speed_text = small_font.render(f"Скорость камеры: {camera_speed:.2f}", True, (255, 255, 255))
+        cam_speed_text = small_font.render(f"Скорость игры: {camera_speed:.2f}", True, (255, 255, 255))
         screen.blit(cam_speed_text, (SCREEN_WIDTH // 2 - 120, 470))
 
         speed_hint = small_font.render("стрелка вверх/вниз изменить ", True, (180, 180, 180))
